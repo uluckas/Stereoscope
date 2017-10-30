@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Stereoscope.iml" filepath="$PROJECT_DIR$/.idea/Stereoscope.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Stereoscope.common/Stereoscope.common.iml" filepath="$PROJECT_DIR$/.idea/modules/Stereoscope.common/Stereoscope.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Stereoscope.java/Stereoscope.java.iml" filepath="$PROJECT_DIR$/.idea/modules/Stereoscope.java/Stereoscope.java.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Stereoscope.js/Stereoscope.js.iml" filepath="$PROJECT_DIR$/.idea/modules/Stereoscope.js/Stereoscope.js.iml" />
     </modules>
   </component>

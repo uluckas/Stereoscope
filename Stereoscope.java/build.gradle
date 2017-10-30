@@ -1,0 +1,21 @@
+group 'de.s2s'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin-platform-jvm'
+apply plugin: 'idea'
+
+apply plugin: 'application'
+mainClassName = "de.s2s.stereoscope.Stereoscope"
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    expectedBy project(":Stereoscope.common")
+    testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+}
