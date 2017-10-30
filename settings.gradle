@@ -1,0 +1,3 @@
+rootProject.name = 'Stereoscope'
+include 'Stereoscope.common'
+include 'Stereoscope.js'

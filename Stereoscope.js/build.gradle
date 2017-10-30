@@ -1,0 +1,50 @@
+buildscript {
+    ext.kotlin_version = '1.2.0-beta-88'
+
+    repositories {
+        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.moowork.gradle:gradle-node-plugin:1.2.0'
+    }
+}
+
+group 'de.s2s'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin-platform-js'
+apply plugin: 'kotlin-dce-js'
+apply plugin: 'com.moowork.node'
+apply plugin: 'idea'
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+node {
+    download = true
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    expectedBy project(":Stereoscope.common")
+    testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+}
+
+compileKotlin2Js {
+    kotlinOptions.moduleKind = "umd"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+}
+
+task buildBundle(type: NpmTask, dependsOn: [npmInstall, runDceKotlinJs]) {
+    args = ["run", "bundle"]
+}
+
+assemble.dependsOn buildBundle
