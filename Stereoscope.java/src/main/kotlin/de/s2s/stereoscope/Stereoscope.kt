@@ -19,7 +19,7 @@ import kotlinx.coroutines.experimental.launch
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 
-class Stereoscope() : Application() {
+class Stereoscope : Application() {
 
 
     private lateinit var stereoRenderer: StereoRenderer
@@ -37,12 +37,12 @@ class Stereoscope() : Application() {
         val root = StackPane(canvas)
 
         primaryStage?.apply {
-            setTitle("Stereoscope");
-            setX(primaryScreenBounds.getMinX())
-            setY(primaryScreenBounds.getMinY())
+            title = "Stereoscope"
+            x = primaryScreenBounds.minX
+            y = primaryScreenBounds.minY
             setWidth(width)
             setHeight(height)
-            setScene(Scene(root, width, height))
+            scene = Scene(root, width, height)
             setOnCloseRequest {
                 Platform.exit()
                 shouldExit = true
