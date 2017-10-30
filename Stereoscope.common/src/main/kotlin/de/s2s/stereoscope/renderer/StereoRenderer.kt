@@ -1,10 +1,14 @@
 package de.s2s.stereoscope.renderer
 
+import de.s2s.stereoscope.basepattern.IBasePattern
+import de.s2s.stereoscope.basepattern.RandomBasePattern
 import de.s2s.stereoscope.elevation.IElevationModel
 import de.s2s.stereoscope.platform.ICanvas
 import kotlin.properties.Delegates
 
-class StereoRenderer(canvas: ICanvas, elevationModel: IElevationModel? = null) {
+class StereoRenderer(canvas: ICanvas,
+                     val basePattern: IBasePattern = RandomBasePattern(),
+                     elevationModel: IElevationModel? = null) {
 
     var canvas: ICanvas by Delegates.observable(canvas) { _, _, _ ->
         updateElevationModelSize()
@@ -33,16 +37,16 @@ class StereoRenderer(canvas: ICanvas, elevationModel: IElevationModel? = null) {
     }
 
 
-    fun render(canvas: ICanvas) {
+    fun render() {
         with(canvas) {
-            for (y in 0..height) {
+            for (y in 0 until height) {
                 val dY = y.toDouble()
-                for (x in 0..width) {
+                for (x in 0 until width) {
                     val dX = x.toDouble()
                     val parallax = parallax(dX, dY)
                     val color = if (x < parallax) {
                         //println("Parallax: $parallax, for pixel $x")
-                        pattern(x, y)
+                        basePattern.patternPixel(x, y)
                     } else {
                         //println("Parallax: $parallax, getting color from ${x - parallax} for pixel $x from ")
                         getPixel(x - parallax, y)
@@ -51,21 +55,6 @@ class StereoRenderer(canvas: ICanvas, elevationModel: IElevationModel? = null) {
                 }
             }
             commit()
-        }
-    }
-
-    private fun pattern(x: Int, y: Int): Color {
-        return Color.randomColor()
-        return Color(x % 255, (x * y) % 255, y % 255, 255)
-        return if ((x / 3) % 2 == 0) {
-            Color.black
-        } else {
-            Color.white
-        }
-        return if (((x * y) / 11) % 2 == 0) {
-            Color.black
-        } else {
-            Color.white
         }
     }
 

@@ -1,5 +1,6 @@
 package de.s2s.stereoscope
 
+import de.s2s.stereoscope.basepattern.RandomBasePattern
 import de.s2s.stereoscope.elevation.CircleElevationModel
 import de.s2s.stereoscope.platform.JSCanvas
 import de.s2s.stereoscope.renderer.Density
@@ -10,7 +11,7 @@ import org.w3c.dom.HTMLElement
 import kotlin.browser.document
 import kotlin.browser.window
 
-class Main {
+class Stereoscope {
 
     private val canvas: JSCanvas
     private val stereoRenderer: StereoRenderer
@@ -18,14 +19,13 @@ class Main {
     init {
         canvas = JSCanvas(newCanvasElement(document.body!!), measureDensity())
 
-        stereoRenderer = StereoRenderer(canvas)
+        stereoRenderer = StereoRenderer(canvas, RandomBasePattern(), CircleElevationModel())
 
     }
 
     fun run() {
-        stereoRenderer.elevationModel = CircleElevationModel()
-        stereoRenderer.render(canvas)
-        window.setInterval(stereoRenderer::render, 20, canvas)
+        stereoRenderer.render()
+        window.setInterval(stereoRenderer::render, 20)
     }
 
     private fun measureDensity(): Density {
@@ -58,5 +58,5 @@ class Main {
 }
 
 fun main(args: Array<String>) {
-    Main().run()
+    Stereoscope().run()
 }
