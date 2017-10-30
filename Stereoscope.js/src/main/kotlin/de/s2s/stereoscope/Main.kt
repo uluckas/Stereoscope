@@ -1,9 +1,9 @@
-/*
-  This shows simple text floating around.
-*/
 package de.s2s.stereoscope
 
 import de.s2s.stereoscope.elevation.CircleElevationModel
+import de.s2s.stereoscope.platform.JSCanvas
+import de.s2s.stereoscope.renderer.Density
+import de.s2s.stereoscope.renderer.StereoRenderer
 import org.w3c.dom.HTMLCanvasElement
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLElement

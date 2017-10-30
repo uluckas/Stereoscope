@@ -1,5 +1,7 @@
-package de.s2s.stereoscope
+package de.s2s.stereoscope.renderer
 
+import de.s2s.stereoscope.elevation.IElevationModel
+import de.s2s.stereoscope.platform.ICanvas
 import kotlin.properties.Delegates
 
 class StereoRenderer(canvas: ICanvas, elevationModel: IElevationModel? = null) {
@@ -54,7 +56,12 @@ class StereoRenderer(canvas: ICanvas, elevationModel: IElevationModel? = null) {
 
     private fun pattern(x: Int, y: Int): Color {
         return Color.randomColor()
-        return Color(x % 255, (x*y) % 255, y % 255, 255)
+        return Color(x % 255, (x * y) % 255, y % 255, 255)
+        return if ((x / 3) % 2 == 0) {
+            Color.black
+        } else {
+            Color.white
+        }
         return if (((x * y) / 11) % 2 == 0) {
             Color.black
         } else {

@@ -1,6 +1,6 @@
 package de.s2s.stereoscope.elevation
 
-import de.s2s.stereoscope.debugger
+import de.s2s.stereoscope.platform.expected.debugger
 import kotlin.math.sqrt
 
 class SphereElevationModel : CircularElevationModelBase() {

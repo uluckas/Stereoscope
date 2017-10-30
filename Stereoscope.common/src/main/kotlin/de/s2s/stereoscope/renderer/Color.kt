@@ -1,4 +1,6 @@
-package de.s2s.stereoscope
+package de.s2s.stereoscope.renderer
+
+import de.s2s.stereoscope.platform.expected.random
 
 data class Color(val r: Int, val g: Int, val b: Int, val a: Int) {
 

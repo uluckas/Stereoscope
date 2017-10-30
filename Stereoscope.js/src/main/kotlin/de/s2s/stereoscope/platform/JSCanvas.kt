@@ -1,5 +1,7 @@
-package de.s2s.stereoscope
+package de.s2s.stereoscope.platform
 
+import de.s2s.stereoscope.renderer.Color
+import de.s2s.stereoscope.renderer.Density
 import org.khronos.webgl.Uint8ClampedArray
 import org.khronos.webgl.get
 import org.khronos.webgl.set

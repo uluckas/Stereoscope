@@ -1,6 +1,5 @@
 package de.s2s.stereoscope.elevation
 
-import de.s2s.stereoscope.IElevationModel
 import kotlin.properties.Delegates
 
 // stdlib min is broken :-(

@@ -1,4 +1,7 @@
-package de.s2s.stereoscope
+package de.s2s.stereoscope.platform
+
+import de.s2s.stereoscope.renderer.Color
+import de.s2s.stereoscope.renderer.Density
 
 interface ICanvas {
     val width: Int
