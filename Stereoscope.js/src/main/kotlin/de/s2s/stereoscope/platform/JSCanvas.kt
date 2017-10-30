@@ -35,6 +35,16 @@ class JSCanvas(htmlCanvas: HTMLCanvasElement, override val density: Density) : I
         return Color(r, g, b, a)
     }
 
+    override fun copyPixel(srcX: Int, srcY: Int, dstX: Int, dstY: Int) {
+        var srcPixelIndex = pixelIndex(srcX, srcY)
+        var dstPixelIndex = pixelIndex(dstX, dstY)
+        val data: Uint8ClampedArray = imageData.data
+        data[dstPixelIndex++] = data[srcPixelIndex++]
+        data[dstPixelIndex++] = data[srcPixelIndex++]
+        data[dstPixelIndex++] = data[srcPixelIndex++]
+        data[dstPixelIndex++] = data[srcPixelIndex++]
+    }
+
     override fun commit() {
         context.putImageData(imageData, 0.0, 0.0)
     }

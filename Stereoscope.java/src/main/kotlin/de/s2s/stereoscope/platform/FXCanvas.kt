@@ -27,6 +27,11 @@ class FXCanvas(private val fxCanvas: Canvas, override var density: Density) : IC
         return de.s2s.stereoscope.renderer.Color(r, g, b, a)
     }
 
+    override fun copyPixel(srcX: Int, srcY: Int, dstX: Int, dstY: Int) {
+        val color = pixelReader.getColor(srcX, srcY)
+        pixelWriter.setColor(dstX, dstY, color)
+    }
+
     override fun commit() {
         fxCanvas.graphicsContext2D.drawImage(writeableImage, 0.0, 0.0)
     }

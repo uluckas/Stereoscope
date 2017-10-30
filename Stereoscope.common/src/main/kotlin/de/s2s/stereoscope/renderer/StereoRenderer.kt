@@ -44,14 +44,14 @@ class StereoRenderer(canvas: ICanvas,
                 for (x in 0 until width) {
                     val dX = x.toDouble()
                     val parallax = parallax(dX, dY)
-                    val color = if (x < parallax) {
+                    if (x < parallax) {
                         //println("Parallax: $parallax, for pixel $x")
-                        basePattern.patternPixel(x, y)
+                        val color = basePattern.patternPixel(x, y)
+                        canvas.setPixel(x, y, color)
                     } else {
                         //println("Parallax: $parallax, getting color from ${x - parallax} for pixel $x from ")
-                        getPixel(x - parallax, y)
+                        copyPixel(x - parallax, y, x, y)
                     }
-                    canvas.setPixel(x, y, color)
                 }
             }
             commit()

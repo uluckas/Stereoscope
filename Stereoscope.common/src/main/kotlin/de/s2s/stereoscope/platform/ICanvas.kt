@@ -9,5 +9,9 @@ interface ICanvas {
     val density: Density
     fun setPixel(x: Int, y: Int, c: Color)
     fun getPixel(x: Int, y: Int): Color
+    fun copyPixel(srcX: Int, srcY: Int, dstX: Int, dstY: Int) {
+        val color = getPixel(srcX, srcY)
+        setPixel(dstX, dstY, color)
+    }
     fun commit()
 }
