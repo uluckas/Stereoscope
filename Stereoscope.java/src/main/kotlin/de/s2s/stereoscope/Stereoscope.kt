@@ -12,13 +12,19 @@ import javafx.scene.canvas.Canvas
 import javafx.scene.layout.StackPane
 import javafx.stage.Screen
 import javafx.stage.Stage
-import java.util.*
+import kotlinx.coroutines.experimental.CoroutineStart
+import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.experimental.javafx.JavaFx
+import kotlinx.coroutines.experimental.launch
+import java.util.concurrent.TimeUnit.MILLISECONDS
 
 
 class Stereoscope() : Application() {
 
 
     private lateinit var stereoRenderer: StereoRenderer
+
+    private var shouldExit = false
 
     override fun start(primaryStage: Stage?) {
         val screen = Screen.getPrimary()
@@ -39,7 +45,7 @@ class Stereoscope() : Application() {
             setScene(Scene(root, width, height))
             setOnCloseRequest {
                 Platform.exit()
-                System.exit(0)
+                shouldExit = true
             }
             show()
         }
@@ -48,21 +54,13 @@ class Stereoscope() : Application() {
         val fxCanvas = FXCanvas(canvas, density)
         stereoRenderer = StereoRenderer(fxCanvas, RandomBasePattern(), CircleElevationModel())
 
-        renderAndRepeat()
-    }
-
-
-    inner class RenderAndRepeatTask() : TimerTask() {
-        override fun run() {
-            renderAndRepeat()
+        launch(JavaFx, CoroutineStart.UNDISPATCHED) {
+            while (true) {
+                stereoRenderer.render()
+                delay(20, MILLISECONDS)
+            }
         }
-    }
 
-    private fun renderAndRepeat() {
-        Platform.runLater {
-            stereoRenderer.render()
-            Timer().schedule(RenderAndRepeatTask(), 20L)
-        }
     }
 
 }
