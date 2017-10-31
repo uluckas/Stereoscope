@@ -20,11 +20,19 @@ kotlin {
     }
 }
 
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     compile "org.jetbrains.kotlinx:kotlinx-coroutines-javafx:$kotlin_coroutines_version"
 
     expectedBy project(":Stereoscope.common")
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
 }
+
