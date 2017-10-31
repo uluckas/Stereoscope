@@ -39,7 +39,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../Stereoscope.js/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../../Stereoscope.js/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../Stereoscope.js/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../Stereoscope.js/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/../../../Stereoscope.js/out" />
     </content>
     <orderEntry type="inheritedJdk" />
