@@ -28,7 +28,8 @@ class Stereoscope : Application() {
 
     override fun start(primaryStage: Stage?) {
         val screen = Screen.getPrimary()
-        val PPMM = screen.dpi / 25.4 // inch to mm
+        val dpi = screen.dpi
+        val PPMM = (if (dpi < 0.0) 96.0 else dpi) / 25.4 // inch to mm
         val primaryScreenBounds = screen.visualBounds
         val width = primaryScreenBounds.width
         val height = primaryScreenBounds.height
