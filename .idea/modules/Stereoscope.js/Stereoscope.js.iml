@@ -5,7 +5,7 @@
       <configuration version="3" platform="JavaScript " useProjectSettings="false">
         <implements>Stereoscope.common</implements>
         <compilerSettings>
-          <option name="additionalArguments" value="-Xmulti-platform" />
+          <option name="additionalArguments" value="-Xmulti-platform call umd /Users/ulu/Projects/Stereoscope/Stereoscope.js/build/classes/kotlin/main/Stereoscope.js.js always v5" />
         </compilerSettings>
         <compilerArguments>
           <option name="outputFile" value="$MODULE_DIR$/../../../Stereoscope.js/build/classes/kotlin/main/Stereoscope.js.js" />
@@ -44,11 +44,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Stereoscope.common" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-js:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-annotations-common:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-beta-88" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-js:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-annotations-common:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-rc-39" level="project" />
   </component>
 </module>

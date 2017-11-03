@@ -4,4 +4,18 @@
     <option name="sourceMapEmbedSources" />
     <option name="sourceMapPrefix" />
   </component>
+  <component name="KotlinCommonCompilerArguments">
+    <option name="errors">
+      <ArgumentParseErrors />
+    </option>
+    <option name="freeArgs">
+      <list>
+        <option value="call" />
+        <option value="umd" />
+        <option value="$PROJECT_DIR$/Stereoscope.js/build/classes/kotlin/main/Stereoscope.js.js" />
+        <option value="always" />
+        <option value="v5" />
+      </list>
+    </option>
+  </component>
 </project>

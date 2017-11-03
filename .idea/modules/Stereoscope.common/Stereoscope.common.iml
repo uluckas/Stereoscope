@@ -13,6 +13,15 @@
           <option name="pluginClasspaths">
             <array />
           </option>
+          <option name="freeArgs">
+            <list>
+              <option value="call" />
+              <option value="umd" />
+              <option value="$MODULE_DIR$/../../../Stereoscope.js/build/classes/kotlin/main/Stereoscope.js.js" />
+              <option value="always" />
+              <option value="v5" />
+            </list>
+          </option>
         </compilerArguments>
       </configuration>
     </facet>
@@ -32,9 +41,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-common:1.2.0-beta-88" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-beta-88" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test-common:1.2.0-rc-39" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.0-rc-39" level="project" />
   </component>
 </module>
